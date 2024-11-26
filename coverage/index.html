@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SomeSec Surveillance - Coverage</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #000; /* Black background */
+      color: #fff; /* Default text color */
+    }
+
+    /* Logo */
+    .logo {
+      position: fixed;
+      top: 10px;
+      left: 20px;
+      font-size: 23px;
+      font-weight: 500;
+      color: #ffffff;
+      z-index: 10;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .logo:hover {
+      color: #007bff;
+    }
+
+    /* Coverage Section */
+    #coverage-section {
+      padding: 50px 20px;
+      background-color: #111;
+      color: #fff;
+    }
+
+    #coverage-section h2 {
+      text-align: center;
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    #coverage-section h3 {
+      font-size: 32px;
+      margin: 40px 0 20px;
+      text-align: center;
+      color: #fab300;
+    }
+
+    .coverage-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .coverage-item {
+      background-color: #222;
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid #333;
+      text-align: center;
+      width: 200px;
+      transition: transform 0.3s, background-color 0.3s;
+    }
+
+    .coverage-item:hover {
+      transform: scale(1.05);
+      background-color: #333;
+    }
+
+    .coverage-item h4 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: #fab300;
+    }
+
+    .coverage-item.pending h4 {
+      color: #ff5f5f; /* Pending countries in red */
+    }
+
+    .coverage-item p {
+      font-size: 16px;
+      color: #aaa;
+    }
+
+    /* Footer Section */
+    footer {
+      background-color: #000;
+      color: #fff;
+      padding: 30px 50px; /* Reduced padding for a smaller vertical size */
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      border-top: 1px solid #333;
+    }
+
+    .footer-left {
+      flex: 1;
+      max-width: 250px;
+    }
+
+    .footer-left h3 {
+      font-size: 16px;
+      text-transform: uppercase;
+      margin-bottom: 10px; /* Reduced margin for smaller size */
+      color: #aaa;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 15px;
+      margin-top: 10px; /* Reduced gap for compact design */
+    }
+
+    .social-icons a {
+      text-decoration: none;
+      font-size: 28px; /* Slightly smaller icon size */
+      color: #fff;
+      transition: color 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #007bff;
+    }
+
+    .footer-section {
+      flex: 1;
+      margin: 10px;
+      min-width: 200px;
+    }
+
+    .footer-section h3 {
+      font-size: 16px;
+      text-transform: uppercase;
+      margin-bottom: 10px; /* Reduced margin */
+      color: #aaa;
+    }
+
+    .footer-section a {
+      display: block;
+      text-decoration: none;
+      color: #fff;
+      margin-bottom: 8px; /* Slightly smaller spacing between links */
+      font-size: 14px;
+    }
+
+    .footer-section a:hover {
+      text-decoration: underline;
+    }
+
+    /* System Status */
+    .system-status {
+      text-align: right;
+      font-size: 14px;
+      color: #00ff00;
+      margin-top: 10px;
+      padding-right: 20px;
+    }
+
+    .status-indicator {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: inline-block;
+      background-color: #00ff00;
+      box-shadow: 0 0 8px #00ff00;
+      margin-right: 5px;
+    }
+  </style>
+
+  <!-- Font Awesome for Social Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Logo -->
+  <a href="https://somesec.info" class="logo">SomeSec Surveillance</a>
+
+  <!-- Coverage Section -->
+  <div id="coverage-section">
+    <h2>Global Coverage</h2>
+    <h3>In-Person Coverage</h3>
+    <div class="coverage-container">
+      <div class="coverage-item">
+        <h4>USA</h4>
+        <p>Available</p>
+      </div>
+      <div class="coverage-item">
+        <h4>UK</h4>
+        <p>Available</p>
+      </div>
+      <div class="coverage-item">
+        <h4>Finland</h4>
+        <p>Available</p>
+      </div>
+      <div class="coverage-item">
+        <h4>Turkey</h4>
+        <p>Available</p>
+      </div>
+      <div class="coverage-item">
+        <h4>China</h4>
+        <p>Available</p>
+      </div>
+      <div class="coverage-item">
+        <h4>Poland</h4>
+        <p>Available</p>
+      </div>
+      <div class="coverage-item">
+        <h4>Spain</h4>
+        <p>Available</p>
+      </div>
+      <div class="coverage-item">
+        <h4>Portugal</h4>
+        <p>Available</p>
+      </div>
+      <div class="coverage-item">
+        <h4>Western Australia</h4>
+        <p>Available</p>
+        </div>
+        <div class="coverage-item">
+            <h4>Denmark</h4>
+            <p>Available</p>
+            </div>
+        <div class="coverage-item">
+            <h4>Slovakia</h4>
+            <p>Available</p>
+            </div>
+         <div class="coverage-item">
+             <h4>Czech Republic</h4>
+             <p>Available</p>
+             </div>
+        <div class="coverage-item">
+         <h4>Germany</h4>
+         <p>Available</p>
+          </div>
+      <div class="coverage-item pending">
+        <h4>Switzerland</h4>
+        <p>Pending</p>
+      </div>
+      <div class="coverage-item pending">
+        <h4>Canada</h4>
+        <p>Pending</p>
+      </div>
+      <div class="coverage-item pending">
+        <h4>Netherlands</h4>
+        <p>Pending</p>
+      </div>
+    </div>
+
+    <h3>Online Coverage</h3>
+    <div class="coverage-container">
+      <div class="coverage-item">
+        <h4>USA</h4>
+        <p>Online Services</p>
+      </div>
+      <div class="coverage-item">
+        <h4>UK</h4>
+        <p>Online Services</p>
+      </div>
+      <div class="coverage-item">
+        <h4>Canada</h4>
+        <p>Online Services</p>
+      </div>
+      <div class="coverage-item">
+        <h4>China (Macau & Hong Kong)</h4>
+        <p>Online Services</p>
+      </div>
+      <div class="coverage-item">
+        <h4>Germany</h4>
+        <p>Online Services</p>
+      </div>
+      <div class="coverage-item">
+        <h4>Mexico</h4>
+        <p>Online Services</p>
+      </div>
+      <div class="coverage-item">
+        <h4>France</h4>
+        <p>Online Services</p>
+      </div>
+      <div class="coverage-item">
+        <h4>Sweden</h4>
+        <p>Online Services</p>
+      </div>
+      <div class="coverage-item">
+        <h4>Finland</h4>
+        <p>Online Services</p>
+      </div>
+      <div class="coverage-item">
+        <h4>Turkey</h4>
+        <p>Online Services</p>
+      </div>
+      <div class="coverage-item">
+        <h4>Denmark</h4>
+        <p>Online Services</p>
+      </div>
+      <div class="coverage-item">
+        <h4>Romania</h4>
+        <p>Online Services</p>
+      </div>
+      <div class="coverage-item">
+        <h4>Russia</h4>
+        <p>Online Services</p>
+      </div>
+      <div class="coverage-item">
+        <h4>Belgium</h4>
+        <p>Online Services</p>
+      </div>
+      <div class="coverage-item">
+        <h4>Switzerland</h4>
+        <p>Online Services</p>
+      </div>
+      <div class="coverage-item">
+        <h4>Ukraine</h4>
+        <p>Online Services</p>
+      </div>
+      <div class="coverage-item">
+        <h4>Italy</h4>
+        <p>Online Services</p>
+      </div>
+      <div class="coverage-item">
+        <h4>Portugal</h4>
+        <p>Online Services</p>
+      </div>
+      <div class="coverage-item">
+        <h4>Ireland</h4>
+        <p>Online Services</p>
+      </div>
+      <div class="coverage-item">
+        <h4>San Marino</h4>
+        <p>Online Services</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="footer-left">
+      <h3>SomeSec Surveillance</h3>
+      <div class="social-icons">
+        <a href="https://twitter.com/somesec" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://linkedin.com/somesec" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://facebook.com/somesec" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://tiktok.com/somesec" target="_blank"><i class="fab fa-tiktok"></i></a>
+      </div>
+    </div>
+    <div class="footer-section">
+      <h3>Product</h3>
+      <a href="https://somesec.info/pricing" target="_blank">Pricing</a>
+      <a href="https://somesec.info/examplereports" target="_blank">Example Reports</a>
+    </div>
+    <div class="footer-section">
+      <h3>Company</h3>
+      <a href="https://somesec.info/contact" target="_blank">Contact</a>
+      <a href="https://somesec.info/careers" target="_blank">Careers</a>
+    </div>
+    <div class="footer-section">
+      <h3>Resources</h3>
+      <a href="https://somesec.info/terms" target="_blank">Terms of Service</a>
+      <a href="https://somesec.info/privacy" target="_blank">Privacy Policy</a>
+    </div>
+  </footer>
+
+  <!-- System Status -->
+  <div class="system-status">
+    <span class="status-indicator"></span>
+    System Status
+  </div>
+
+  <!-- Snowstorm Effect -->
+  <script src="https://cdn.jsdelivr.net/gh/scottschiller/Snowstorm/snowstorm.js"></script>
+  <script>
+    snowStorm.snowColor = '#ffffff';
+    snowStorm.flakesMaxActive = 100;
+    snowStorm.animationInterval = 150;
+    snowStorm.flakeWidth = 5;
+    snowStorm.flakeHeight = 5;
+    snowStorm.start();
+  </script>
+</body>
+</html>
