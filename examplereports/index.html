@@ -65,7 +65,7 @@
     .report-item {
       display: flex;
       align-items: center;
-      justify-content: space-between;
+  justify-content: flex-start; /* Align items to the left */
       background-color: #222;
       padding: 20px;
       width: 300px;
@@ -90,6 +90,7 @@
     .report-item span {
       font-size: 18px;
       text-align: left;
+  flex: 1; /* Let the text take up remaining space */
     }
 
     /* Footer Section */
