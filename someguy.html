@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SomeSec Surveillance</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #000; /* Black background for the entire page */
+      color: #fff; /* Default text color */
+    }
+
+    /* General Styles */
+    h2 {
+      font-size: 48px;
+      font-weight: 400;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 22px;
+      line-height: 1.8;
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    a {
+      color: #007bff; /* Blue links */
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Initial Section */
+    #initial-section {
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+      background-color: #111; /* Very dark grey */
+      color: #aaa; /* Light grey text */
+    }
+
+    .logo {
+      position: fixed;
+      top: 10px;
+      left: 20px;
+      font-size: 23px;
+      font-weight: 500;
+      color: #ffffff;
+      z-index: 10;
+    }
+
+    .container {
+      position: relative;
+      z-index: 5;
+      width: 90%;
+      max-width: 800px;
+      margin: 0 auto;
+      padding-top: 10vh;
+    }
+
+    .typewriter-container {
+      position: relative;
+      text-align: left;
+      font-size: 36px;
+      font-weight: 300;
+      color: #fff;
+      margin-left: 10%;
+      line-height: 1.4;
+    }
+
+    .typewriter-container h1 {
+      margin: 0;
+    }
+
+    .typewriter-container .dynamic {
+      color: #fab300;
+      font-weight: 300;
+    }
+
+    .typed-cursor {
+      font-size: 73px;
+      color: #fff;
+    }
+
+    .typewriter-container::before {
+      content: '';
+      position: absolute;
+      left: -20px; /* Position the line to the left of the text */
+      top: 0;
+      width: 2px; /* Thickness of the line */
+      height: 100%; /* Full height of the text block */
+      background-color: #fff; /* White line */
+    }
+
+    .tagline {
+      font-size: 25px;
+      font-weight: 300;
+      color: #888;
+      text-align: center;
+      margin: 40px 0 0;
+      line-height: 1.8;
+    }
+
+    /* Global Coverage Section */
+    #global-coverage-section {
+      padding: 30px 20px;
+      text-align: center;
+      background-color: #000;
+    }
+
+    /* Resources Section */
+    #resources-section {
+      padding: 30px 20px;
+      background-color: #000000;
+      text-align: center;
+    }
+
+    #resources-section h2 {
+      font-size: 48px;
+      margin-bottom: 30px;
+    }
+
+    .resources-container {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .resource-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #222; /* Slightly lighter black for contrast */
+      padding: 20px 30px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      border: 1px solid #333; /* Subtle border */
+      transition: background-color 0.3s;
+      cursor: pointer;
+    }
+
+    .resource-item:hover {
+      background-color: #333; /* Darker background on hover */
+    }
+
+    .resource-item a {
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: 300;
+      color: #fff; /* White text */
+      width: 100%; /* Make the entire box clickable */
+    }
+
+    .resource-item a:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer Section */
+    footer {
+      background-color: #000;
+      color: #fff;
+      padding: 30px 50px; /* Reduced padding for a smaller vertical size */
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      border-top: 1px solid #333;
+    }
+
+    .footer-left {
+      flex: 1;
+      max-width: 250px;
+    }
+
+    .footer-left h3 {
+      font-size: 16px;
+      text-transform: uppercase;
+      margin-bottom: 10px; /* Reduced margin for smaller size */
+      color: #aaa;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 15px;
+      margin-top: 10px; /* Reduced gap for compact design */
+    }
+
+    .social-icons a {
+      text-decoration: none;
+      font-size: 28px; /* Slightly smaller icon size */
+      color: #fff;
+      transition: color 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #007bff; /* Highlight on hover */
+    }
+
+    .footer-section {
+      flex: 1;
+      margin: 10px;
+      min-width: 200px;
+    }
+
+    .footer-section h3 {
+      font-size: 16px;
+      text-transform: uppercase;
+      margin-bottom: 10px; /* Reduced margin */
+      color: #aaa;
+    }
+
+    .footer-section a {
+      display: block;
+      text-decoration: none;
+      color: #fff;
+      margin-bottom: 8px; /* Slightly smaller spacing between links */
+      font-size: 14px;
+    }
+
+    .footer-section a:hover {
+      text-decoration: underline;
+    }
+
+    /* System Status */
+    .system-status {
+      text-align: right;
+      font-size: 14px;
+      color: #00ff00;
+      margin-top: 10px; /* Slightly higher position */
+      padding-right: 20px;
+    }
+
+    .status-indicator {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: inline-block;
+      background-color: #00ff00;
+      box-shadow: 0 0 8px #00ff00; /* Glow effect */
+      margin-right: 5px;
+    }
+
+    /* Glow pulse animation */
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      50% {
+        transform: scale(1.2);
+        opacity: 0.7;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+  </style>
+
+  <!-- Font Awesome for Social Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Initial Section -->
+  <div id="initial-section">
+    <div class="logo">SomeSec Surveillance</div>
+
+    <div class="container">
+      <div class="typewriter-container">
+        <h1>Worldwide</h1>
+        <h1>Investigation</h1>
+        <h1>Service for</h1>
+        <h1 class="dynamic"><span id="typed"></span></h1>
+      </div>
+      <p class="tagline">
+        SomeSec Surveillance gives you a new way of gaining insights about people. 
+        We offer services spanning from background checks for companies and researchers 
+        to fraud prevention for law enforcement.<br><br>
+      </p>
+    </div>
+  </div>
+
+  <!-- Global Coverage Section -->
+  <div id="global-coverage-section">
+    <h2>Global Coverage</h2>
+    <p>
+      SomeSec Surveillance is expanding its global network to ensure every region 
+      of the world is covered by our dedicated investigators. From bustling cities 
+      to remote areas, we work tirelessly to provide seamless services.
+      Discover the countries we currently operate in by clicking 
+      <a href="https://somesec.info/coverage" target="_blank">here</a>.
+    </p>
+  </div>
+
+  <!-- Resources Section -->
+  <div id="resources-section">
+    <h2>Resources</h2>
+    <div class="resources-container">
+      <div class="resource-item">
+        <a href="https://somesec.info/coverage" target="_blank">Coverage</a>
+      </div>
+      <div class="resource-item">
+        <a href="https://somesec.info/pricing" target="_blank">Pricing</a>
+      </div>
+      <div class="resource-item">
+        <a href="https://somesec.info/contact" target="_blank">Contact</a>
+      </div>
+      <div class="resource-item">
+        <a href="https://somesec.info/examplereports" target="_blank">Example Reports</a>
+      </div>
+      <div class="resource-item">
+        <a href="https://somesec.info/careers" target="_blank">Careers</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="footer-left">
+      <h3>SomeSec Surveillance</h3>
+      <div class="social-icons">
+        <a href="https://twitter.com/somesec" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://linkedin.com/somesec" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://facebook.com/somesec" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://tiktok.com/somesec" target="_blank"><i class="fab fa-tiktok"></i></a>
+      </div>
+    </div>
+    <div class="footer-section">
+      <h3>Product</h3>
+      <a href="https://somesec.info/pricing" target="_blank">Pricing</a>
+      <a href="https://somesec.info/examplereports" target="_blank">Example Reports</a>
+    </div>
+    <div class="footer-section">
+      <h3>Company</h3>
+      <a href="https://somesec.info/contact" target="_blank">Contact</a>
+      <a href="https://somesec.info/careers" target="_blank">Careers</a>
+    </div>
+    <div class="footer-section">
+      <h3>Resources</h3>
+      <a href="https://somesec.info/terms" target="_blank">Terms of Service</a>
+      <a href="https://somesec.info/privacy" target="_blank">Privacy Policy</a>
+    </div>
+  </footer>
+
+  <!-- System Status -->
+  <div class="system-status">
+    <span class="status-indicator"></span>
+    System Status
+  </div>
+
+  <!-- Snowstorm Effect -->
+  <script src="https://cdn.jsdelivr.net/gh/scottschiller/Snowstorm/snowstorm.js"></script>
+  <script>
+    snowStorm.snowColor = '#ffffff';
+    snowStorm.flakesMaxActive = 100;
+    snowStorm.animationInterval = 150;
+    snowStorm.flakeWidth = 5;
+    snowStorm.flakeHeight = 5;
+    snowStorm.start();
+  </script>
+
+  <!-- Load Typed.js -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script>
+    new Typed('#typed', {
+      strings: ['Law Enforcement', ' ', 'Researchers', ' ', 'Companies', ' ', 'Fraud Prevention', ' ', 'Law Firms', ' ', 'Realtors'],
+      typeSpeed: 100,
+      backSpeed: 50,
+      backDelay: 1000,
+      startDelay: 300,
+      loop: true,
+      showCursor: true,
+      cursorChar: '|',
+    });
+  </script>
+</body>
+</html>
